@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block3C Aufgabe 4</title>
+</head>
+<body>
+    <form>
+        <label for='schraubenF'>Wieviele Schrauben?:</label>
+        <input type='number' id='schraubenF' value='0'>
+        <br>
+
+        <label for='mutternF'>Wieviele Muttern?:</label>
+        <input type='number' id='mutternF' value='0'>
+        <br>
+
+        <label for='unterlegF'>Wieviele Unterlegsschreiben?:</label>
+        <input type='number' id='unterlegF' value='0'>
+        <br>
+
+        <input type='submit' value='Absenden'>
+        <input type='reset' value='Formular löschen'>
+    </form>
+
+    <p>Resultat -> </p>
+
+    <script>
+        var submit = document.querySelector('form');
+        submit.addEventListener('submit', (e) => { 
+            e.preventDefault();
+            
+            const schraubenF = document.querySelector('#schraubenF');
+            const mutternF = document.querySelector('#mutternF');
+            const unterlegF = document.querySelector('#unterlegF');
+
+            const schraubenA = schraubenF.value * 0.2;
+            const mutternA = mutternF.value * 0.1;
+            const unterlegA = unterlegF.value * 0.05;
+
+            const amount = schraubenA + mutternA + unterlegA;
+
+            document.querySelector('p').innerText = 'Resultat -> ' + amount.toFixed(2) + ' Franken';
+        });
+    </script>
+</body>
+</html>
